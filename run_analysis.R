@@ -2,7 +2,7 @@
 if (!require("reshape2")) {install.packages("reshape2") 
 require("reshape2")} 
 
-
+wear <- function () {
 ## GET THE SUBJECTS
 ## Get the subject data
 subject_train <- read.table("C:/Users/Gary/OneDrive/Data Science/3. Getting and Cleaning Data/Project/Wearable/GitProject/RunAnalysis/UCI HAR Dataset/train/subject_train.txt", quote="\"", stringsAsFactors=FALSE)
@@ -47,7 +47,7 @@ data <- cbind(subjects, labels, values)
 
 ##names(values_train)<-feature_names 
 ##names(values_test)<-feature_names 
-write.table(data, file="wearableData.txt")
+write.table(data, file="wearableData.txt",row.name=FALSE )
 
 ## WITH COMBINED DATA, GET THE MEAN OF ALL VARIABLES BY SUBJECT
 data = melt(data, id.var = c("Subject", "labels")) 
@@ -55,5 +55,6 @@ data = dcast(data , Subject + labels ~ variable, mean)
 
 
 ## SAVE THE DATA AS TXT FILE
-write.table(values, file="summarisedWearableData.txt")
-values
+write.table(data, file="summarisedWearableData.txt",row.name=FALSE)
+data
+}
