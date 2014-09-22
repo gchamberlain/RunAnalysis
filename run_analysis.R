@@ -55,5 +55,5 @@ data = dcast(data , Subject + labels ~ variable, mean)
 
 
 ## SAVE THE DATA AS TXT FILE
-write.table(values, file="summarisedWearableData.txt")
-values
+write.table(data, file="summarisedWearableData.txt")
+data
