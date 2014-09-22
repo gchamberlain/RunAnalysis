@@ -1,8 +1,10 @@
+wear <- function () {
+
 ## Install reshape2 if not already
 if (!require("reshape2")) {install.packages("reshape2") 
 require("reshape2")} 
 
-wear <- function () {
+
 ## GET THE SUBJECTS
 ## Get the subject data
 subject_train <- read.table("C:/Users/Gary/OneDrive/Data Science/3. Getting and Cleaning Data/Project/Wearable/GitProject/RunAnalysis/UCI HAR Dataset/train/subject_train.txt", quote="\"", stringsAsFactors=FALSE)
